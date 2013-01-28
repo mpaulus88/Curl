@@ -1,4 +1,5 @@
 <div id="member">
+	<h2 class="membre">Inscription<h2>
 	<?php
 		 echo validation_errors(); 
 		 echo form_open('membre/signin',array('method'=>'post'));

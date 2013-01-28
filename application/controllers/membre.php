@@ -22,7 +22,7 @@
 		$this->form_validation->set_message('matches', 'Le mot de passe ne correspond pas à la confirmation');
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data=[];
+			$data=array();
 		}
 		else
 		{
@@ -40,14 +40,13 @@
 			} 
 			else
 			{
-				consol.log('mauvais_identifiant');
-				redirect('error/mauvais_identifiant');
+				$data['messageM']="Erreurs d'identification!";
+				
 			}
-			$data['titre']='Connexion';
-			redirect('lien/');
-		}
-		    $data['vue'] = $this->load->view('membre', $data, true);
-            $this->load->view('layout', $data);
+		 }
+		 $data['vue'] = $this->load->view('membre', $data, true);
+	            $this->load->view('layout', $data);
+
 		
 	}
 	public function logout()
@@ -84,7 +83,7 @@
 		$this->form_validation->set_message('matches', 'Le mot de passe ne correspond pas à la confirmation');
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data=[];
+			$data=array();
 		}
 		else
 		{

@@ -1,5 +1,12 @@
 <div id="memberB">
 	<?php
+		if(isset($messageM)): ?>
+		<p class="errM"><?php echo $messageM; ?></p>
+		<?php
+		else:?>
+		<h2 class="membre">Connexion</h2>
+		<?php 
+		 endif;
 		echo validation_errors(); 
 		 echo form_open('membre/login',array('method'=>'post'));
 		 echo form_fieldset('Connexion');
