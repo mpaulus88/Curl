@@ -9,7 +9,7 @@ class Mycustom{
 		$CI =& get_instance();
 		$CI->load->model('M_Membre');
 		$suivi=$CI->M_Membre->getFollow($id);
-		$data=[];
+		$data=array();
 		foreach ($suivi as $follow) {
 		array_push($data,$follow['id_ami']);
 		}

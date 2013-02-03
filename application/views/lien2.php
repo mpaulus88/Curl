@@ -7,11 +7,7 @@ $this->load->helper('form');?>
   <?php
   echo form_open('lien/recuperer_donnees', array('method' => 'post'));
   echo form_fieldset('Curl lien');
-  $data = array(
-              'name'        => 'lien',
-              'id'          => 'lien',
-              'placeholder'       => 'lien');
-  echo form_input($data);
+  echo form_input('lien', 'lien');
   echo form_submit('check', 'CurLink','class="btn"');
   echo form_fieldset_close();
   echo form_close(); 
@@ -97,11 +93,7 @@ if(isset($image_lien)):?>
      echo form_fieldset('Recherche Tag');?>
      <span>#</span>
      <?php
-     $data = array(
-              'name'        => 'tag',
-              'id'          => 'tag',
-              'placeholder'       => 'tag');
-     echo form_input($data);
+     echo form_input('tag', 'tag');
      echo form_submit('search', 'Rechercher','class="btn"');
       echo form_fieldset_close();
      echo form_close(); ?>
@@ -126,8 +118,7 @@ if(isset($image_lien)):?>
     endif;
     ?>
     <p><?php echo $link['description']; ?></p>
-    <p class="author">ajouté par&nbsp;<?php echo $link['nom']; ?></p>
-    <a target="_blank" name="<?php echo $link['titre']; ?>" href="<?php echo $link['url']; ?>">Consulter le site</a>
+    <a target="_blank" name="< ?php echo $link['titre']; ?>" href="<?php echo $link['url']; ?>">Consulter le site</a>
     <?php if(!empty($link['image'])): ?>
     <img alt="<?php echo $link['titre']; ?>" src="<?php echo site_url(); ?>web/img/uploaded/<?php echo $link['image']; ?>"/>
     <?php endif; ?>

@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'googlePlus';
+$db['default']['hostname'] = 'mysql51-37.perso';
+$db['default']['username'] = 'martinpasql';
+$db['default']['password'] = '3dI3p6mW';
+$db['default']['database'] = 'martinpasql';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

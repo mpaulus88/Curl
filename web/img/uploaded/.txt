@@ -1,40 +1,43 @@
 <!DOCTYPE HTML>
 <html lang="fr-FR">
 <head>
-	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><script src="http://martinpaulus.be/wp-content/themes/nouveauTheme/script/css3-mediaqueries.js"></script><![endif]-->
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">
 	<meta charset="UTF-8">
-	<meta name="description" content="Le portfolio de Martin Paulus"/>
+	<meta name="description" content="Le portfolio de Martin Paulus">
 	<link rel="stylesheet" type="text/css" href="http://martinpaulus.be/wp-content/themes/nouveauTheme/style.css"/>
+	<link rel="stylesheet" type="text/css" href="http://martinpaulus.be/wp-content/themes/nouveauTheme/fontello.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
+	<link href="http://martinpaulus.be/wp-content/themes/nouveauTheme/image/logofav.ico" rel="icon">
 	<title>Martin Paulus | Web Designer</title>
 
 </head>
 <body>
 	<header id="banner">
-	<img id="logo" src="http://martinpaulus.be/wp-content/themes/nouveauTheme/image/logo.png" alt="logo-martin-paulus" title="logo">
+	<a title="Martin Paulus | Web Designer" href="http://martinpaulus.be"><img id="logo" src="http://martinpaulus.be/wp-content/themes/nouveauTheme/image/logo.png" alt="logo-martin-paulus" title="logo"></a>
 	<h1 id="maintitle">
-		<a href="http://martinpaulus.be">Martin Paulus | Web Designer</a>
+		<a title="Martin Paulus | Web Designer" href="http://martinpaulus.be">Martin Paulus | Web Designer</a>
 	</h1>
 	</header>
 	<div id="main">
 	<nav>
-		<div class="menu-header-menu-container"><ul id="menu-header-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://martinpaulus.be/?page_id=79">CONTACT</a></li>
-<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://martinpaulus.be/?page_id=51">NEWS</a></li>
-<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://martinpaulus.be/?page_id=49">PORTFOLIO</a></li>
-<li id="menu-item-105" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-105"><a href="http://martinpaulus.be">ACCUEIL</a></li>
+		<h1 class="hidden">Navigation principal</h1>
+		<div class="menu-header-menu-container"><ul id="menu-header-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://martinpaulus.be/?page_id=79">contact</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://martinpaulus.be/?page_id=51">news</a></li>
+<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://martinpaulus.be/?page_id=49">portfolio</a></li>
+<li id="menu-item-105" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-105"><a href="http://martinpaulus.be">accueil</a></li>
 </ul></div>	</nav>
 <div id="corpsBody">
 <section id="imgNav">
 	<h1 class="hidden">Illustration</h1>
-	<div class="gradient"></div>
 	<div id="cap" class="imgElement"></div>
 	<div id="pen" class="imgElement"></div>
-	<a id="laptop" class="imgElement" href="http://martinpaulus.be/portfolio/#web"></a>
-	<a id="agenda" class="imgElement" href="http://martinpaulus.be/news"></a>
-	<a id="folders" class="imgElement" href="http://martinpaulus.be/?page_id=49/#2d"></a>
-	<a id="phone" class="imgElement" href="http://martinpaulus.be/contact-2"></a>
-	<a id="drawing" class="imgElement" href="http://martinpaulus.be/portfolio/#dessins"></a>
-	<div class="gradient"></div>
+	<a title="Web" id="laptop" class="imgElement" href="http://martinpaulus.be/?page_id=49/#Web"></a>
+	<a title="News" id="agenda" class="imgElement" href="http://martinpaulus.be/?page_id=51"></a>
+	<a title="Print" id="folders" class="imgElement" href="http://martinpaulus.be/?page_id=49/#Print"></a>
+	<a title="Contact" id="phone" class="imgElement" href="http://martinpaulus.be/?page_id=79"></a>
+	<a title="Print" id="drawing" class="imgElement" href="http://martinpaulus.be/?page_id=49#Print"></a>
 </section>
 				<section class="accueil">
 					<h1 class="hidden">Texte de présentation</h1>
@@ -61,27 +64,29 @@
 </div>
 		<footer id="main-footer">
 				<section id="footer-art">
-					<h1 class="hidden">footer</h1>
+					<h1 class="hidden">Bas de page</h1>
 											<article>
-					<h4>MOSA LIVE EVENTS</h4>
-					<p>Suivez également l&rsquo;actualité de Mosa Live Events une organisation dont je fais partie et qui fait la promotion de jeunes groupes belges.</p>
+					<h4>mosa live events</h4>
+					<p><a href="https://www.facebook.com/MosaLiveEvents">Suivez également l&rsquo;actualité de Mosa Live Events une organisation dont je fais partie et qui fait la promotion de jeunes groupes belges.</a></p>
 				</article>
 									<article>
-					<h4>MES LECTURES</h4>
+					<h4>Mes lectures</h4>
 					<ul id="read">
-<li><img src="http://martinpaulus.be/wp-content/themes/nouveauTheme/image/jquery.png" alt="jquery" />
-<p><em>JQuery</em></p>
+<li><img src="http://martinpaulus.be/wp-content/themes/nouveauTheme/image/jquery.png" alt="jquery"/><a href="http://shop.oreilly.com/product/0636920016182.do?intcmp=ba-code-books-int-search-more-with-jquery-ct" alt="jquery"><br />
+<h5>JQuery</h5>
+<p></a>
 <p>David Flanagan</p>
 </li>
-<li><img src="http://martinpaulus.be/wp-content/themes/nouveauTheme/image/html5.png" alt="html5" />
-<p><em>Html 5 for Web Designer</em></p>
+<li><img src="http://martinpaulus.be/wp-content/themes/nouveauTheme/image/html5.png" alt="html5" /><a href="http://www.abookapart.com/products/html5-for-web-designers" alt="html5 for webdesigner"><br />
+<h5>Html 5 for Web Designer</h5>
+<p></a>
 <p>Jeremy Keith</p>
 </li>
 </ul>
 				</article>
 							</section> 
 				<section id="ressoc">
-					<h4>REJOIGNEZ MOI SUR</h4>
+					<h4>Rejoignez moi sur</h4>
 											<ul>
 																		<li>
 						<img width="28" height="20" src="http://martinpaulus.be/wp-content/uploads/2012/10/twitter1.png" class="ressoc wp-post-image" alt="twitter" title="twitter" />						<a href="https://twitter.com/MartinPaulus1">Twitter</a>

@@ -138,6 +138,7 @@ class lien extends CI_Controller {
 	}
 	public function ajouter()
 	{
+		var_dump($this->input->post('image'));
 		$this->load->model('M_Lien');
 		$this->load->helper(array('form', 'url'));
 		$data['titre']="Ajout d'un lien";
@@ -186,9 +187,8 @@ class lien extends CI_Controller {
 	}
 	public function ajouterTag($id,$data)
 	{
-		$data['description'];
 		$description=$data['description'];
-		$regexTag = '#\#(.*?)\W?$#im';
+		$regexTag = '#\#(.*?)\s#im';
 		if(preg_match_all($regexTag,$description, $tag))
 		{
 			foreach ($tag[1] as $_tag) {
@@ -200,7 +200,7 @@ class lien extends CI_Controller {
 	public function ajouterArobase($id,$data)
 	{
 		$description=$data['description'];
-		$regexArobase = '#\#(.*?)\W?$#im';
+		$regexArobase = '#@(.*?)\s#im';
 		if(preg_match_all($regexArobase,$description, $at))
 		{
 			foreach ($at[1] as $_at)
@@ -241,7 +241,7 @@ class lien extends CI_Controller {
 	{
 		foreach ($data['liens'] as $key=>$liens) {
 			str_replace('"',"'",$data['liens'][$key]['description']);
-			$data['liens'][$key]['description']=preg_replace_callback('#\#(.*?)\W?$#im','self::replace', $data['liens'][$key]['description']);
+			$data['liens'][$key]['description']=preg_replace_callback('#\#(.*?)\s#im','self::replace', $data['liens'][$key]['description']);
 		}
 		return $data;
 	}
@@ -269,7 +269,6 @@ class lien extends CI_Controller {
 		}
 		$data['vue']=$this->load->view('lien',$data,TRUE);
 		unset($data['erreur']);
-		$data['listeMembre']=$this->mycustom->listerMembre();
 		if($this->input->is_ajax_request() == TRUE)
 		{
 		echo ($data['vue']);
@@ -336,34 +335,6 @@ class lien extends CI_Controller {
 			{
 				$this->load->view('layout', $data);	
 			}	
-	}
-	public function listerAuteur()
-	{
-		$this->load->model('M_Lien');
-		$data['anchor']='follow';
-		if($get=$this->input->get(NULL, TRUE))
-		{
-		$id=$get['id'];
-		$data['titre']='Liste des liens ';
-		if(!$data['liens']=$this->M_Lien->listAuthor($id))
-		{
-			$data['erreur']="Cette personne n'a pas posté de lien";
-		}
-		$data['vue']=$this->load->view('lien',$data,TRUE);
-		if($this->input->is_ajax_request() == TRUE)
-			{
-			echo ($data['vue']);
-			}
-			else
-			{
-				$this->load->view('layout', $data);	
-			}
-		}
-		else
-		{
-			$data['erreur']="Cette personne n'a pas posté de lien";
-			$this->load->view('layout', $data);
-		}	
 	}
 	public function supprimer()
 	{
@@ -437,7 +408,6 @@ class lien extends CI_Controller {
 			}
 			$data=$this->ajouterTag($id,$data);
 			$error=$this->ajouterArobase($id,$data);
-			$data['titre']='Liste desliens';
 			$data['vue']=$this->load->view('lien',$data,TRUE);
 			redirect($this->load->view('layout', $data));
 		}

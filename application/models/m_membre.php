@@ -30,6 +30,10 @@ class M_Membre extends CI_MODEl
 	public function addFollow($data)
 	{
 		$this->db->insert('follow',$data);
-	} 
+	}
+	public function delFollow($data)
+	{	$this->db->where(array('id_membre'=>$data['id_membre'],'id_ami'=>$data['id_ami']));
+		$this->db->delete('follow');
+	}
 
 }

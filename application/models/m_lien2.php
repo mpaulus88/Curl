@@ -4,20 +4,15 @@ class M_Lien extends CI_Model
 	public function listing()
 	{
 		$this->db->simple_query('SET NAMES \'utf-8\''); 
-		$this->db->order_by("id_lien", "desc");
-		$this->db->from('liens');
-		$this->db->join('membre', 'liens.id_membre = membre.id_membre'); 
-		$query = $this->db->get();
+		$this->db->order_by("id_lien", "desc"); 
+		$query = $this->db->get('liens');
 		
 		return $query->result_array();
 	}
 	public function listFollow($data)
 	{	
-		
-		$this->db->from('liens');
-		$this->db->where_in('liens.id_membre',$data);
-		$this->db->join('membre', 'liens.id_membre = membre.id_membre'); 
-		$query = $this->db->get();
+		$this->db->where_in('id_membre',$data);
+		$query = $this->db->get('liens');
 		return $query->result_array();
 	}
 	
@@ -61,7 +56,6 @@ class M_Lien extends CI_Model
 		$this->db->order_by("liens.id_lien", "desc"); 
 		$this->db->select('*');
 		$this->db->from('liens');
-		$this->db->join('membre', 'liens.id_membre = membre.id_membre'); 
 		$this->db->join('tags', 'tags.id_lien = liens.id_lien');
 		$query = $this->db->get();
 		return $query->result_array();
@@ -72,7 +66,6 @@ class M_Lien extends CI_Model
 		$this->db->select('*');
 		$this->db->order_by("liens.id_lien", "desc"); 
 		$this->db->from('liens');
-		$this->db->join('membre', 'liens.id_membre = membre.id_membre'); 
 		$this->db->join('ats', 'ats.id_lien = liens.id_lien');
 		$query = $this->db->get();
 		return $query->result_array();
@@ -85,8 +78,7 @@ class M_Lien extends CI_Model
 	public function listOne($id)
 	{
 		$this->db->where('id_lien',$id);
-		$this->db->from('liens');
-
+		$this->db->from('liens');	
 		$query = $this->db->get();
 		return $query->row_array();
 	}
@@ -100,13 +92,5 @@ class M_Lien extends CI_Model
 		$this->db->where('id_lien', $id);
 		$this->db->update('liens', $data);
 		return $id; 
-	}
-	public function listAuthor($id)
-	{
-		$this->db->where('liens.id_membre',$id);
-		$this->db->from('liens');
-		$this->db->join('membre', 'liens.id_membre = membre.id_membre'); 
-		$query = $this->db->get();
-		return $query->result_array();
 	}
 }
